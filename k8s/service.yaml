@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: laravel-app
+  name: restoactif-gitops
   namespace: laravel
 spec:
-  selector: { app: laravel-app }
+  selector: { app: restoactif-gitops }
   ports: [{ port: 80, targetPort: 80 }]
