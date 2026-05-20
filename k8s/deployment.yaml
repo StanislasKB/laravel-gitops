@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-app
+  namespace: laravel
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: laravel-app }
+  template:
+    metadata:
+      labels: { app: laravel-app }
+    spec:
+      containers:
+      - name: app
+        image: StanislasKB/laravel-app:latest  # mis à jour automatiquement par CI
+        ports: [{ containerPort: 80 }]
+        envFrom:
+        - configMapRef: { name: laravel-config }
+        - secretRef: { name: laravel-secret }
+        livenessProbe:
+          httpGet: { path: /, port: 80 }
+          initialDelaySeconds: 30
+        readinessProbe:
+          httpGet: { path: /, port: 80 }
+          initialDelaySeconds: 10
+        resources:
+          requests: { cpu: 100m, memory: 256Mi }
+          limits: { cpu: 500m, memory: 512Mi }
