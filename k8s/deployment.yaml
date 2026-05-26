@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: bayord/restoactif-gitops:latest
+        image: bayord/restoactif-gitops:6e658293ef858029cc958138851bfa3fa17c8643
         ports: [{ containerPort: 80 }]
         envFrom:
         - configMapRef: { name: laravel-config }
