@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: laravel.98.81.191.35.nip.io
+  - host: laravel.13.220.253.187.nip.io
     http:
       paths:
       - path: /
