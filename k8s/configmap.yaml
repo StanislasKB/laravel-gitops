@@ -6,7 +6,7 @@ metadata:
 data:
   APP_ENV: "production"
   APP_DEBUG: "false"
-  APP_URL: "http://restoactif-gitops.98.81.191.35.nip.io"
+  APP_URL: "http://restoactif-gitops.13.220.253.187.nip.io"
   DB_CONNECTION: "pgsql"
   DB_HOST: "postgres"
   DB_PORT: "5432"
